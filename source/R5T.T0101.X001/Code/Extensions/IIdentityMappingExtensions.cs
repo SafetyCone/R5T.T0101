@@ -77,5 +77,12 @@ namespace System.Linq
             var output = items.FindSingle(Instances.Predicate.LocalIdentityIs<T>(identity));
             return output;
         }
+
+        public static Dictionary<Guid, T> ToDictionaryByLocalIdentity<T>(this IEnumerable<T> items)
+            where T : IIdentityMapping
+        {
+            var output = items.ToDictionary(x => x.LocalIdentity);
+            return output;
+        }
     }
 }
