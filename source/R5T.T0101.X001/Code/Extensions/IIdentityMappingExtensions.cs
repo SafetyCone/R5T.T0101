@@ -41,7 +41,7 @@ namespace System.Linq
 
             var foundItems = items
                 .Where(x => identitiesHash.Contains(x.LocalIdentity))
-                .Now();
+                .Now_OLD();
 
             var notFoundIdentities = identitiesHash.Except(foundItems
                 .Select(x => x.LocalIdentity));
